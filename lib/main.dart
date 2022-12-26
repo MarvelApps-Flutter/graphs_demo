@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/base_screen.dart';
+import 'package:syncfusion_ex/screens/splash_screen.dart';
 
 void main() {
   return runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Chart Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const BaseScreen(),
+      home: const SplashScreen()
     );
   }
 }

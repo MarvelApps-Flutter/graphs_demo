@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_ex/constants/app_constants.dart';
 import 'bar_chart_screen.dart';
 import 'line_chart_screen.dart';
 
@@ -21,7 +22,7 @@ class BaseScreenState extends State<BaseScreen> {
     Icons.stacked_line_chart,
   ];
 
-  List<String> titleList = ["Bar Chart", "Line Chart"];
+  List<String> titleList = [AppConstants.barChart, AppConstants.lineChart];
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,7 @@ class BaseScreenState extends State<BaseScreen> {
                   ),
                   width: size.width * .300,
                   height: index == currentIndex ? size.width * .014 : 0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF4f51fe),
                     borderRadius: BorderRadius.vertical(
                       bottom: Radius.circular(10),
@@ -78,7 +79,7 @@ class BaseScreenState extends State<BaseScreen> {
                   iconsList[index],
                   size: size.width * .060,
                   color: index == currentIndex
-                      ? Color(0xFF4f51fe)
+                      ? const Color(0xFF4f51fe)
                       : Colors.black38,
                 ),
                 Text(

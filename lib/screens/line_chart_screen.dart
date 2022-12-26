@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_ex/constants/app_constants.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import '../models/line_chart_data.dart';
 
@@ -11,7 +12,6 @@ class LineChartScreen extends StatefulWidget {
 }
 
 class LineChartScreenState extends State<LineChartScreen> {
-
   final List<LineChartData> lineChartData = [
     LineChartData(2017, 25),
     LineChartData(2018, 40),
@@ -20,15 +20,15 @@ class LineChartScreenState extends State<LineChartScreen> {
     LineChartData(2021, 40),
     LineChartData(2022, 75),
   ];
-   
+
   late TooltipBehavior tooltipBehavior;
 
   @override
   void initState() {
-   tooltipBehavior = TooltipBehavior(enable: true);
+    tooltipBehavior = TooltipBehavior(enable: true);
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class LineChartScreenState extends State<LineChartScreen> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           title: const Text(
-            'Line chart',
+            AppConstants.lineChart,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -44,7 +44,7 @@ class LineChartScreenState extends State<LineChartScreen> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.black,
               )),
@@ -59,35 +59,29 @@ class LineChartScreenState extends State<LineChartScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SfCartesianChart(
-                    title: ChartTitle(text: "Yearly sales analysis"),
-                    tooltipBehavior: tooltipBehavior,
-                     
+                      title: ChartTitle(text: AppConstants.yearlyAnalyse),
+                      tooltipBehavior: tooltipBehavior,
                       primaryXAxis: CategoryAxis(
                           interval: 1,
-                        title: AxisTitle(text: "Year"),
-                        edgeLabelPlacement: EdgeLabelPlacement.shift
-                      ),
-                     
+                          title: AxisTitle(text: AppConstants.year),
+                          edgeLabelPlacement: EdgeLabelPlacement.shift),
                       primaryYAxis: NumericAxis(
-                        
                           minimum: 0,
                           maximum: 200,
                           interval: 50,
                           opposedPosition: true),
-                      series: <ChartSeries<LineChartData, double>>
-                        
-                          [
-                            LineSeries<LineChartData, double>(
-                              color: Colors.black,
-                              dataLabelSettings: DataLabelSettings(isVisible: true),
-                              name: "Sales",
-                              enableTooltip: true,
+                      series: <ChartSeries<LineChartData, double>>[
+                        LineSeries<LineChartData, double>(
+                          color: Colors.black,
+                          dataLabelSettings:
+                              const DataLabelSettings(isVisible: true),
+                          name: AppConstants.sales,
+                          enableTooltip: true,
                           dataSource: lineChartData,
                           xValueMapper: (LineChartData sales, _) => sales.year,
                           yValueMapper: (LineChartData sales, _) => sales.sales,
                         ),
                       ]),
-                  
                 ],
               ),
             ),

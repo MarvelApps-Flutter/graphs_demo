@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_ex/constants/app_constants.dart';
 import 'package:syncfusion_ex/models/time_track_chart_data.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -72,7 +73,7 @@ class BarChartScreenState extends State<BarChartScreen> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           title: const Text(
-            'Bar chart',
+            AppConstants.barChart,
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0,
@@ -80,7 +81,7 @@ class BarChartScreenState extends State<BarChartScreen> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.black,
               )),
@@ -97,41 +98,41 @@ class BarChartScreenState extends State<BarChartScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Time Track"),
+                      const Text(AppConstants.timeTrack),
                       Row(
                         children: [
                           Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 5),
-                              margin: EdgeInsets.all(5),
+                              margin: const EdgeInsets.all(5),
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey),
                                 color: Colors.transparent,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(100)),
+                                    const BorderRadius.all(Radius.circular(100)),
                               ),
-                              child: Text("Steps")),
+                              child: const Text(AppConstants.steps)),
                           Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 5),
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
+                              margin: const EdgeInsets.all(5),
+                              decoration: const BoxDecoration(
                                 color: Colors.black,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(100)),
                               ),
-                              child: Text(
-                                "Calories",
+                              child: const Text(
+                                AppConstants.calories,
                                 style: TextStyle(color: Colors.white),
                               )),
                         ],
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 4,
                   ),
-                  Text("5:00 AM (942 Calories burnt)"),
+                  const Text(AppConstants.caloriesBurnt),
                   SfCartesianChart(
                       tooltipBehavior: _trackballBehavior,
                       primaryXAxis: CategoryAxis(
@@ -160,36 +161,36 @@ class BarChartScreenState extends State<BarChartScreen> {
                             yValueMapper: (TimeTrackChartData data, _) =>
                                 data.y),
                       ]),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Water Track"),
+                      const Text(AppConstants.waterTrack),
                       Row(
                         children: [
                           Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 5),
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
+                              margin: const EdgeInsets.all(5),
+                              decoration: const BoxDecoration(
                                 color: Colors.black,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(100)),
                               ),
-                              child: Text(
-                                "Water",
+                              child: const Text(
+                                AppConstants.water,
                                 style: TextStyle(color: Colors.white),
                               )),
                         ],
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 4,
                   ),
-                  Text("April"),
+                  const Text(AppConstants.april),
                   SfCartesianChart(
                       tooltipBehavior: _trackballBehavior1,
                       primaryXAxis: CategoryAxis(
