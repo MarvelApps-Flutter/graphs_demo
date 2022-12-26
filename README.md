@@ -16,7 +16,7 @@ A new Flutter app demonstrating graphs.
  </table>
 </br>
 
-# IOS Screenshots
+# iOS Screenshots
 
 <table>
   <tr>
